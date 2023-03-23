@@ -20,13 +20,13 @@ Route::get('/', function () {
 
 route::get('/carros', [CarrosController::class, 'index'])->name('carros.index');
 
-// route::get('/carros', [CarrosContreller::class,'create'])->name('Carros.create');
+route::get('/carros/novo', [CarrosContreller::class,'create'])->name('Carros.create');
 
 // route::get('/carros/{id}', [CarrosController::class, 'show'])->name('Carros.show');
 
 // route::get('/carros/{id}/edit', [CarrosController::class, 'edit'])->name('Carros.edit');
 
-// route::get('/carros', [CarrosController::class, 'store'])->name('Carros.store');
+route::get('/carros', [CarrosController::class, 'store'])->name('Carros.store');
 
 // route::get('/carros/{id}', [CarrosController::class, 'update'])->name('Carros.update');
 
