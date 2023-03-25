@@ -12,7 +12,7 @@
     <div class="container">
         <h1>Lista de Carros</h1>
 
-        <a class="btn btn-outline-sucess my-2" href="{{route('carros.create')}}">Novo Carro</a>
+        <a class="btn btn-outline-success my-2" href="{{route('carros.create')}}">Novo Carro</a>
 
         <table class="table table-hover table-bordered table-primary">
             <tr class="table-dark">
@@ -21,15 +21,19 @@
                 <th>Cor</th>
                 <th>Motor</th>
                 <th>Ano</th>
+                <th></th>
             </tr>
 
             @foreach ($carros as $carro )
                 <tr>
-                   <td>{{$Carro->modelo}}</td>
-                   <td>{{$Carro->marca}}</td>
-                   <td>{{$Carro->cor}}</td>
-                   <td>{{$Carro->motor}}</td>
-                   <td>{{$Carro->ano}}</td>
+                   <td>{{$carro->modelo}}</td>
+                   <td>{{$carro->marca}}</td>
+                   <td>{{$carro->cor}}</td>
+                   <td>{{$carro->motor}}</td>
+                   <td>{{$carro->ano}}</td>
+                   <td>
+                        <a href="{{ route('carros.show', $carro->id) }}">Ver</a>
+                   </td>
                 </tr>
 
             @endforeach

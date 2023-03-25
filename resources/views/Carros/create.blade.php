@@ -11,7 +11,7 @@
     <div class='container mb-3'>
         <h1>Novo Carro</h1>
 
-        <form method="POST" action"{{ route('carros.store') }}">
+        <form method="POST" action="{{ route('carros.store') }}">
             @csrf
             <div class="mb-3" >
                 <label>Modelo</label>
@@ -29,9 +29,16 @@
             </div>
 
             <div class="mb-3" >
+                <label>Motor</label>
+                <input type="text" name="motor" class="form-control">
+            </div>
+
+            <div class="mb-3" >
                 <label>Ano</label>
                 <input type="number" name="ano" class="form-control">
             </div>
+
+            <input type="submit" value="Salvar Carro" class="btn btn-primary">
         </form>
 
     </div>

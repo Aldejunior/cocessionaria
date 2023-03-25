@@ -20,7 +20,7 @@ class CarrosController extends Controller
 
     public function store(request $requisicao)
     {
-        $carro = new carro();
+        $carro = new Carro();
         $carro->modelo = $requisicao->modelo;
         $carro->marca = $requisicao->marca;
         $carro->cor = $requisicao->cor;
@@ -28,5 +28,29 @@ class CarrosController extends Controller
         $carro->ano = $requisicao->ano;
 
         $carro->save();
+
+        return redirect()->route('carros.show', $carro->id);
     }
+
+    public function show(Carro $carro)
+    {
+
+        return view('carros.view', compact('carro'));
+    }
+
+    public function edit(Carro $carro)
+    {
+
+        return view('carros.edit', compact('carro'));
+    }
+
+    public function update(Request $requisicao, Carro $carro)
+    {
+
+        $carro->update($requisicao->all());
+
+
+        return redirect()->route('carros.show', $carro->id);
+    }
+
 }

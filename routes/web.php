@@ -18,16 +18,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-route::get('/carros', [CarrosController::class, 'index'])->name('carros.index');
+Route::get('/carros', [CarrosController::class, 'index'])->name('carros.index');
 
-route::get('/carros/novo', [CarrosContreller::class,'create'])->name('Carros.create');
+Route::get('/carros/novo', [CarrosController::class,'create'])->name('carros.create');
 
-// route::get('/carros/{id}', [CarrosController::class, 'show'])->name('Carros.show');
+Route::get('/carros/{carro}', [CarrosController::class, 'show'])->name('carros.show');
 
-// route::get('/carros/{id}/edit', [CarrosController::class, 'edit'])->name('Carros.edit');
+Route::get('/carros/{carro}/editar', [CarrosController::class, 'edit'])->name('carros.edit');
 
-route::get('/carros', [CarrosController::class, 'store'])->name('Carros.store');
+Route::post('/carros', [CarrosController::class, 'store'])->name('carros.store');
 
-// route::get('/carros/{id}', [CarrosController::class, 'update'])->name('Carros.update');
+Route::put('/carros/{carro}', [CarrosController::class, 'update'])->name('carros.update');
 
-// route::get('/carros/{id}', [CarrosController::class, 'destroy'])->name('Carros.destroy');
+// route::get('/carros/{id}', [CarrosController::class, 'destroy'])->name('carros.destroy');
