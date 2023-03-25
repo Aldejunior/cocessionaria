@@ -30,4 +30,4 @@ Route::post('/carros', [CarrosController::class, 'store'])->name('carros.store')
 
 Route::put('/carros/{carro}', [CarrosController::class, 'update'])->name('carros.update');
 
-// route::get('/carros/{id}', [CarrosController::class, 'destroy'])->name('carros.destroy');
+route::delete('/carros/{carro}', [CarrosController::class, 'destroy'])->name('carros.destroy');

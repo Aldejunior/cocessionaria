@@ -53,4 +53,11 @@ class CarrosController extends Controller
         return redirect()->route('carros.show', $carro->id);
     }
 
+    public function destroy(Carro $carro)
+    {
+        $carro->delete();
+
+        return redirect()->route('carros.index');
+    }
+
 }
